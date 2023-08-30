@@ -1,1 +1,41 @@
-<p>update works!</p>
+<div class="container">
+    <h2 class="m-5 text-center"><strong>Edit gamer PC's</strong></h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">CPU</th>
+                    <th scope="col">GPU</th>
+                    <th scope="col">RAM</th>
+                    <th scope="col">Storage</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pc of gamerpc">
+                    <td><input class="form-control" type="text" [(ngModel)]="pc.cim"></td>
+                    <td>
+                        <select class="form-select" aria-label="Default select example"[(ngModel)]="pc.cpu" [value]="pc.cpu">>
+                            <option [value]="'-NX4SrMvO90uMROV-Y-i'">AMD Ryzen 9 5900X</option>
+                            <option [value]="'-NX4Sp2s8Elby3dJ7AmU'">Intel Core i7-9700K</option>
+                          </select>
+                    </td>
+                    <td><input class="form-control" type="text" [(ngModel)]="pc.gpu"></td>
+                    <td><input class="form-control" type="text" [(ngModel)]="pc.ram"></td>
+                    <td><input class="form-control" type="text" [(ngModel)]="pc.storage"></td>
+                    <td><input *ngIf="pc.comment" class="form-control" type="text" [(ngModel)]="pc.comment.text"></td>
+                    <td><input class="form-control" type="text" [(ngModel)]="pc.price"></td>
+                    <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+                            <button (click)="editPc(pc)" type="button" class="btn btn-success">Update</button>
+                            <button (click)="deletePc(pc)"type="button" class="btn btn-danger">Delete</button>
+                          </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

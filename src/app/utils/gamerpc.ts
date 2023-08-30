@@ -6,4 +6,9 @@ export class gamerpc {
     price?: number;
     ram?: string;
     storage?: string;
+    comment?: comment;
+}
+
+export class comment {
+    text?: string;
 }

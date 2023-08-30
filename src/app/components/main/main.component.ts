@@ -15,17 +15,24 @@ export class MainComponent {
   cpu?: cpu[];
 
   constructor(private bs: BaseService) {
-    this.bs.getGamerPc().snapshotChanges().pipe(map(changes => changes.map(c =>({key: c.payload.key, ...c.payload.val()})))
+    this.bs.getGamerPc().snapshotChanges().pipe(map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
     ).subscribe(data => {
       this.gamerpc = data;
       console.log(this.gamerpc);
     })
 
-this.bs.getCpu().snapshotChanges().pipe(map(changes => changes.map(c => ({key: c.payload.key, ...c.payload.val()})))
-).subscribe(data => {
-  this.cpu = data;
-  console.log(this.cpu);
-})
+    this.bs.getCpu().snapshotChanges().pipe(map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() })))
+    ).subscribe(data => {
+      this.cpu = data;
+      console.log(this.cpu);
+    })
+
+  }
+
+  getCpus(key: string | undefined) {
+    return this.cpu?.find((k: any) => {
+      return k.key == key;
+    })
 
   }
 

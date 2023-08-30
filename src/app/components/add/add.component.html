@@ -1,1 +1,45 @@
-<p>add works!</p>
+<div class="container">
+    <h2 class="m-5 text-center"><strong>Add new PC</strong></h2>
+
+    <div class="row">
+        <div class="col">
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="newGamerPc.cim">
+        </div>
+        <label>CPU</label>
+        <div class="col">
+            <input type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>GPU</label>
+            <input type="text" class="form-control" [(ngModel)]="newGamerPc.gpu">
+        </div>
+        <label>RAM</label>
+        <div class="col">
+            <input type="text" class="form-control" [(ngModel)]="newGamerPc.ram">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Storage</label>
+            <input type="text" class="form-control" [(ngModel)]="newGamerPc.storage">
+        </div>
+        <label>Comment</label>
+        <div class="col">
+            <input *ngIf="newGamerPc.comment" class="form-control" type="text" [(ngModel)]="newGamerPc.comment.text">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label>Price</label>
+            <input type="number" class="form-control" [(ngModel)]="newGamerPc.price">
+        </div>
+        <button (click)="addNewPc(newGamerPc)" class="btn btn-success mt-3">Send new PC!</button>
+    </div>
+
+</div>

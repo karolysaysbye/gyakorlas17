@@ -1,3 +1,29 @@
 <div class="container">
-    <p>main works!</p>
+    <h2 class="m-5 text-center"><strong>Gamer PC's</strong></h2>
+    <div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">CPU</th>
+            <th scope="col">GPU</th>
+            <th scope="col">RAM</th>
+            <th scope="col">Storage</th>
+            <th scope="col">Comment</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pc of gamerpc">
+            <td>{{pc.cim}}</td>
+            <td>{{getCpus(pc.cpu)?.megnevezes}}</td>
+            <td>{{pc.gpu}}</td>
+            <td>{{pc.ram}}</td>
+            <td>{{pc.storage}}</td>
+            <td>{{pc.comment?.text}}</td>
+            <td>{{pc.price | currency: "$ ": 'symbol' : '3.0-1' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </div>

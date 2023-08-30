@@ -1,6 +1,6 @@
 .navbar {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 150px;
+    padding-bottom: 150px;
     background-image: url('../../../assets/header_bg.png') !important;
     background-size: cover;
     background-position: center;
@@ -10,6 +10,7 @@
     color: black !important;
     border-color: black !important;
     border-width: 10px;
+    margin-bottom: 10px;
 }
 
 .navbar-toggler-icon {
@@ -18,10 +19,15 @@
 
 .navbar-nav {
     background-color: aliceblue;
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
-.nav-item {
+.active {
     margin-left: 15px;
     margin-right: 15px;
+}
+
+.nav-item:hover {
+    background-color: rgb(225, 217, 217);
+    border-radius: 15px;
 }
