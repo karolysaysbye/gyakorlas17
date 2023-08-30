@@ -1,0 +1,27 @@
+.navbar {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url('../../../assets/header_bg.png') !important;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-toggler {
+    color: black !important;
+    border-color: black !important;
+    border-width: 10px;
+}
+
+.navbar-toggler-icon {
+    color: black !important;
+}
+
+.navbar-nav {
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+.nav-item {
+    margin-left: 15px;
+    margin-right: 15px;
+}
